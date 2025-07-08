@@ -36,6 +36,15 @@ const GLOBE_CONFIG: COBEOptions = {
   ],
 };
 
+/**
+ * Renders an interactive 3D globe that can be rotated by dragging horizontally.
+ *
+ * The globe is displayed on a canvas and supports smooth animated rotation using pointer or touch input. It automatically rotates when idle and displays configurable markers and styling based on the provided configuration.
+ *
+ * @param className - Optional additional CSS classes for the container.
+ * @param config - Optional configuration object for customizing the globe's appearance and markers.
+ * @returns A React element containing the interactive globe.
+ */
 export function Globe({
   className,
   config = GLOBE_CONFIG,

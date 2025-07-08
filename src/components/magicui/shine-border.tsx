@@ -23,9 +23,14 @@ interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Shine Border
+ * Renders an animated border effect with a customizable shine, width, and animation duration.
  *
- * An animated background border effect component with configurable properties.
+ * The border uses a radial gradient and CSS masking to create a shine animation around its content. The shine color can be a single color or an array of colors.
+ *
+ * @param borderWidth - The width of the border in pixels. Defaults to 1.
+ * @param duration - The duration of the shine animation in seconds. Defaults to 14.
+ * @param shineColor - The color or colors of the shine effect. Defaults to "#000000".
+ * @returns A `div` element with an animated shine border effect.
  */
 export function ShineBorder({
   borderWidth = 1,

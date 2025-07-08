@@ -4,6 +4,13 @@ import AuthPage from "./pages/AuthPage";
 import Navbar from "./components/Navbar";
 import { Toaster } from "sonner";
 
+/**
+ * The main application component that sets up routing, layout, navigation, and notifications.
+ *
+ * Wraps the app in a router, displays the navigation bar, and renders either the authentication or challenge page based on the current route. Includes a toaster for displaying notifications.
+ *
+ * @returns The root React element for the application.
+ */
 function App() {
   return (
     <BrowserRouter>

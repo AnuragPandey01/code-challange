@@ -36,6 +36,15 @@ const buttonVariants = cva(
   },
 );
 
+/**
+ * Renders a customizable button with variant, size, and loading state options.
+ *
+ * Supports rendering as a native button or as a child component via Radix UI Slot. Displays a loading spinner and disables interaction when `isLoading` is true.
+ *
+ * @param children - The content to display inside the button
+ * @param asChild - If true, renders as a Slot component instead of a native button
+ * @param isLoading - If true, shows a loading spinner and disables the button
+ */
 function Button({
   className,
   variant,

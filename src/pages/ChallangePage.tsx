@@ -13,6 +13,11 @@ import appwriteConf from "@/conf/appwrite_conf";
 import { databases } from "@/lib/appwrite";
 import type { Language } from "@/types/api/Language";
 
+/**
+ * Renders the coding challenge interface with language selection, code editor, and tabbed navigation.
+ *
+ * Provides a user interface for solving coding challenges, allowing users to select a programming language, edit code, switch editor themes, and navigate between challenge, submissions, discussion, and editorial tabs.
+ */
 function ChallangePage() {
   const [langs, setLangs] = useState<Language[]>([]);
   const [selectedLang, setSelectedLang] = useState<Language>();
