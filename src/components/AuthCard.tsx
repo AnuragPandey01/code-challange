@@ -43,7 +43,11 @@ function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
     <Card className="w-[350px] overflow-hidden relative">
       <CardHeader className="text-center">
         <CardTitle>{type === "signup" ? "Signup" : "Login"}</CardTitle>
-        <CardDescription>Login to your account to continue</CardDescription>
+        <CardDescription>
+          {type === "signup"
+            ? "Create an account to get started"
+            : "Login to your account to continue"}
+        </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         <Input
