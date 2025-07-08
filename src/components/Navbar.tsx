@@ -8,7 +8,7 @@ function Navbar() {
         <div className="font-semibold">CodeChallange</div>
       </div>
       <div className="flex items-center gap-2">
-        <Button variant="outline">Singup</Button>
+        <Button variant="outline">Signup</Button>
         <Button>Login</Button>
       </div>
     </nav>
