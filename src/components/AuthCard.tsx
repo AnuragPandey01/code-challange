@@ -11,6 +11,7 @@ import { Github } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface AuthCardProps {
   type: "signup" | "login";
@@ -24,21 +25,21 @@ function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async () => {
-+    if (!email || !password) {
-+      toast.error("Please fill in all fields");
-+      return;
-+    }
+    if (!email || !password) {
+      toast.error("Please fill in all fields");
+      return;
+    }
     setIsLoading(true);
     await onSubmit(email, password);
     setIsLoading(false);
   };
-+
-+  const handleKeyPress = (e: React.KeyboardEvent) => {
-+    if (e.key === 'Enter' && !isLoading) {
-+      handleSubmit();
-+    }
-+  };
-  
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !isLoading) {
+      handleSubmit();
+    }
+  };
+
   return (
     <Card className="w-[350px] overflow-hidden relative">
       <CardHeader className="text-center">
@@ -55,16 +56,15 @@ function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-+          onKeyPress={handleKeyPress}
-+          disabled={isLoading}
+          disabled={isLoading}
         />
         <Input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-+          onKeyPress={handleKeyPress}
-+          disabled={isLoading}
+          onKeyDown={handleKeyPress}
+          disabled={isLoading}
         />
       </CardContent>
       <CardFooter className="flex flex-col gap-2">

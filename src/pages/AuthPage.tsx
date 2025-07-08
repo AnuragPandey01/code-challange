@@ -30,10 +30,10 @@ function AuthPage() {
   useEffect(() => {
     const getSession = async () => {
       try {
-        const session = await account.get();
-        // Handle session data appropriately, e.g., update state
+        await account.get();
+        //TODO: Handle session data appropriately, e.g., update state
       } catch (error) {
-        // User is not logged in, which is expected on auth page
+        //TODO: User is not logged in, which is expected on auth page
       }
     };
     getSession();
