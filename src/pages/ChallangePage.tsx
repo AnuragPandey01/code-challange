@@ -41,7 +41,7 @@ function ChallangePage() {
   }, []);
 
   return (
-    <div className="dark min-h-svh w-full bg-background p-5 text-foreground">
+    <div className="min-h-svh w-full">
       <Tabs defaultValue="challange">
         <TabsList>
           <TabsTrigger value="challange">Challange</TabsTrigger>
