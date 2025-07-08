@@ -6,6 +6,13 @@ import TerminalDeco from "@/components/TerminalDeco";
 import { OAuthProvider } from "appwrite";
 import { useEffect } from "react";
 
+/**
+ * Renders the authentication page with signup, login, and GitHub OAuth options.
+ *
+ * Displays a tabbed interface for user signup and login, each handled by dedicated forms. Integrates with Appwrite for authentication and provides feedback via toast notifications. Includes a decorative terminal component on larger screens.
+ *
+ * @returns The authentication page React element.
+ */
 function AuthPage() {
   const handleSignup = async (email: string, password: string) => {
     try {

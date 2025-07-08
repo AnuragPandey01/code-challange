@@ -5,6 +5,13 @@ import {
 } from "@/components/magicui/terminal";
 import { MagicCard } from "@/components/magicui/magic-card";
 
+/**
+ * Renders an animated terminal interface simulating the setup process of a code challenge platform.
+ *
+ * Displays a sequence of typing and status animations to create a dynamic onboarding experience for users.
+ *
+ * @returns A React element containing the animated terminal simulation.
+ */
 function TerminalDeco() {
   return (
     <MagicCard className="rounded-xl">

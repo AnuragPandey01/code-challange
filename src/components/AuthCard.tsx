@@ -18,6 +18,17 @@ interface AuthCardProps {
   handleGithubLogin: () => void;
 }
 
+/**
+ * Renders an authentication card for user signup or login with email/password and GitHub OAuth options.
+ *
+ * Displays input fields for email and password, a submit button that triggers the provided authentication handler, and an option to authenticate via GitHub.
+ *
+ * @param type - Determines whether the card is in "signup" or "login" mode
+ * @param onSubmit - Async function called with the entered email and password when the user submits the form
+ * @param handleGithubLogin - Function called when the user chooses to authenticate with GitHub
+ *
+ * @returns A React element representing the authentication card UI
+ */
 function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
