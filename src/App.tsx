@@ -3,11 +3,15 @@ import ChallangePage from "./pages/ChallangePage";
 import AuthPage from "./pages/AuthPage";
 import Navbar from "./components/Navbar";
 import { Toaster } from "sonner";
+import useThemeStore from "./store/themeStore";
 
 function App() {
+
+  const theme = useThemeStore((state) => state.theme);
+
   return (
     <BrowserRouter>
-      <div className="dark min-h-svh w-full bg-background text-foreground flex flex-col">
+      <div className={`${theme} min-h-svh w-full bg-background text-foreground flex flex-col`}>
         <Navbar />
         <main className="p-5 flex-1 flex">
           <Routes>
