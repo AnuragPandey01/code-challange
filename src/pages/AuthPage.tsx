@@ -10,6 +10,17 @@ import { useSearchParams } from "react-router";
 function AuthPage() {
 
   const [query, setQuery] = useSearchParams();
+  const currentTab = query.get("tab");
+
+  useEffect(() => {
+    if (!currentTab || (currentTab !== "signup" && currentTab !== "login")) {
+      setQuery({ tab: "signup" }, { replace: true }); // Avoid pushing to history
+    }
+  }, [currentTab, setQuery]); 
+
+  const handleTabChange = (value: string) => {
+    setQuery({ tab: value }, { replace: true });
+  };
   
   const handleSignup = async (email: string, password: string) => {
     try {
@@ -61,7 +72,7 @@ function AuthPage() {
   return (
     <div className="flex-1 flex">
       <div className="flex-1 flex items-center justify-center">
-        <Tabs defaultValue={query.get("tab") || "signup"}>
+        <Tabs onValueChange={handleTabChange} value={currentTab || "signup"}>
           <TabsList>
             <TabsTrigger value="signup">Signup</TabsTrigger>
             <TabsTrigger value="login">Login</TabsTrigger>
