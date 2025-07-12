@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router";
 
 function AuthPage() {
-
   const [query, setQuery] = useSearchParams();
   const currentTab = query.get("tab");
 
@@ -16,12 +15,12 @@ function AuthPage() {
     if (!currentTab || (currentTab !== "signup" && currentTab !== "login")) {
       setQuery({ tab: "signup" }, { replace: true }); // Avoid pushing to history
     }
-  }, [currentTab, setQuery]); 
+  }, [currentTab, setQuery]);
 
   const handleTabChange = (value: string) => {
     setQuery({ tab: value }, { replace: true });
   };
-  
+
   const handleSignup = async (email: string, password: string) => {
     try {
       await account.create(ID.unique(), email, password);
@@ -70,8 +69,8 @@ function AuthPage() {
   };
 
   return (
-    <div className="flex-1 flex">
-      <div className="flex-1 flex items-center justify-center">
+    <div className="flex flex-1">
+      <div className="flex flex-1 items-center justify-center">
         <Tabs onValueChange={handleTabChange} value={currentTab || "signup"}>
           <TabsList>
             <TabsTrigger value="signup">Signup</TabsTrigger>
@@ -94,7 +93,7 @@ function AuthPage() {
         </Tabs>
       </div>
 
-      <div className="flex-1 hidden md:flex items-center justify-center">
+      <div className="hidden flex-1 items-center justify-center md:flex">
         <TerminalDeco />
       </div>
     </div>

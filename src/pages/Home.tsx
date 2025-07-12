@@ -2,12 +2,7 @@ import { Globe } from "@/components/magicui/globe";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import useThemeStore from "@/store/themeStore";
-import {
-  GitBranch,
-  MessageSquare,
-  Sword,
-  Trophy,
-} from "lucide-react";
+import { GitBranch, MessageSquare, Sword, Trophy } from "lucide-react";
 import type { COBEOptions, Marker } from "cobe";
 
 const marker: Marker[] = [{ location: [18.9582, 72.8321], size: 0.1 }];
@@ -86,7 +81,7 @@ function Home() {
         <div className="mt-8 grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-5">
           <FeatureCard
             icon={Sword}
-            title="Challange" 
+            title="Challange"
             description="Create and share your own coding challenges with the community"
           />
           <FeatureCard

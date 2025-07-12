@@ -8,7 +8,7 @@ import { MagicCard } from "@/components/magicui/magic-card";
 function TerminalDeco() {
   return (
     <MagicCard className="rounded-xl">
-      <Terminal className="h-fit bg-transparent border-none">
+      <Terminal className="h-fit border-none bg-transparent">
         <TypingAnimation className="text-lg">
           &gt; npm create code-challenge-platform@latest
         </TypingAnimation>

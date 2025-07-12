@@ -41,7 +41,7 @@ function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
   };
 
   return (
-    <Card className="w-[350px] overflow-hidden relative">
+    <Card className="relative w-[350px] overflow-hidden">
       <CardHeader className="text-center">
         <CardTitle>{type === "signup" ? "Signup" : "Login"}</CardTitle>
         <CardDescription>
@@ -73,7 +73,7 @@ function AuthCard({ type, onSubmit, handleGithubLogin }: AuthCardProps) {
         </Button>
         <div className="flex w-full items-center gap-2">
           <Separator className="flex-1" />
-          <span className="text-sm text-muted-foreground">Or</span>
+          <span className="text-muted-foreground text-sm">Or</span>
           <Separator className="flex-1" />
         </div>
         <Button

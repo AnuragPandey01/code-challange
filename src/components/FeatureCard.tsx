@@ -15,7 +15,9 @@ export function FeatureCard({
   className,
 }: FeatureCardProps) {
   return (
-    <Card className={` ${className} w-full hover:bg-accent hover:shadow-lg hover:scale-105 transition-all duration-300`}>
+    <Card
+      className={` ${className} hover:bg-accent w-full transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+    >
       <CardHeader>
         <Icon className="size-8" />
         <h3 className="text-2xl font-semibold">{title}</h3>

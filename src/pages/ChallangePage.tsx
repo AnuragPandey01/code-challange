@@ -51,7 +51,7 @@ function ChallangePage() {
         </TabsList>
         <TabsContent className="flex flex-col gap-5" value="challange">
           <div className="flex flex-col">
-            <div className="flex justify-end gap-2 bg-accent p-2">
+            <div className="bg-accent flex justify-end gap-2 p-2">
               <Select
                 onValueChange={(theme) => {
                   setTheme(theme);
