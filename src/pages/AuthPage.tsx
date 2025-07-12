@@ -5,8 +5,12 @@ import AuthCard from "@/components/AuthCard";
 import TerminalDeco from "@/components/TerminalDeco";
 import { OAuthProvider } from "appwrite";
 import { useEffect } from "react";
+import { useSearchParams } from "react-router";
 
 function AuthPage() {
+
+  const [query, setQuery] = useSearchParams();
+  
   const handleSignup = async (email: string, password: string) => {
     try {
       await account.create(ID.unique(), email, password);
@@ -57,7 +61,7 @@ function AuthPage() {
   return (
     <div className="flex-1 flex">
       <div className="flex-1 flex items-center justify-center">
-        <Tabs defaultValue="signup">
+        <Tabs defaultValue={query.get("tab") || "signup"}>
           <TabsList>
             <TabsTrigger value="signup">Signup</TabsTrigger>
             <TabsTrigger value="login">Login</TabsTrigger>

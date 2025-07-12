@@ -1,17 +1,21 @@
 import useThemeStore from "@/store/themeStore";
 import { Button } from "./ui/button";
 import { Moon, Sun } from "lucide-react";
+import { Link, useLocation } from "react-router";
 
 function Navbar() {
+  const location = useLocation();
   const theme = useThemeStore((state) => state.theme);
   const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
+  const isAuthPage = location.pathname.includes("/auth");
+
   return (
-    <nav className="flex items-center justify-between py-2 px-5 border-[accent]-600 border-b">
-      <div className="flex items-center gap-2">
-        <img src="logo-dark.svg" alt="logo" className="w-10 h-10" />
+    <nav className="border-[accent]-600 flex items-center justify-between border-b px-5 py-2">
+      <Link to="/" className="flex items-center gap-2">
+        <img src="logo-dark.svg" alt="logo" className="h-10 w-10" />
         <div className="font-semibold">CodeChallenge</div>
-      </div>
+      </Link>
       <div className="flex items-center gap-2">
         {theme === "light" ? (
           <Moon
@@ -28,9 +32,16 @@ function Navbar() {
             }}
           />
         )}
-
-        <Button variant="link">Signup</Button>
-        <Button variant="outline">Login</Button>
+        {!isAuthPage && (
+          <>
+            <Link to="/auth?tab=signup">
+              <Button variant="link">Signup</Button>
+            </Link>
+            <Link to="/auth?tab=login">
+              <Button variant="outline">Login</Button>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );

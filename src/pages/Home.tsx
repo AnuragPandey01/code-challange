@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import useThemeStore from "@/store/themeStore";
 import {
-  ArrowRight,
   GitBranch,
   MessageSquare,
   Sword,
