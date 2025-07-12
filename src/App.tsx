@@ -4,6 +4,7 @@ import AuthPage from "./pages/AuthPage";
 import Navbar from "./components/Navbar";
 import { Toaster } from "sonner";
 import useThemeStore from "./store/themeStore";
+import Home from "./pages/Home";
 
 function App() {
 
@@ -11,15 +12,24 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`${theme} min-h-svh w-full bg-background text-foreground flex flex-col`}>
+      <div
+        className={`${theme} min-h-svh w-full bg-background text-foreground flex flex-col`}
+      >
         <Navbar />
-        <main className="p-5 flex-1 flex">
+        <main className="p-5 flex-1 flex md:px-8">
           <Routes>
+            <Route element={<Home />} path="/" />
             <Route element={<AuthPage />} path="/auth" />
-            <Route element={<ChallangePage />} index />
+            <Route element={<ChallangePage />} path="challange" />
           </Routes>
-          <Toaster />
         </main>
+        <footer className="p-5">
+          <p className="text-center text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} CodeChallange. All rights reserved.
+          </p>
+        </footer>
+
+        <Toaster />
       </div>
     </BrowserRouter>
   );
