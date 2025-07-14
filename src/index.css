@@ -40,6 +40,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-shine: shine var(--duration) infinite linear;
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
   @keyframes shine {
     0% {
       background-position: 0% 0%;
@@ -86,6 +92,12 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --warning-foreground: oklch(0.4348 0.0876 86.65);
+  --warning: oklch(0.964 0.0509 92.55);
+  --success-foreground: oklch(0.2972 0.0598 159.19);
+  --success: oklch(0.90 0.02 166);
+  --danger: oklch(0.8155 0.079 12.03);
+  --danger-foreground: oklch(0.3119 0.0975 19.17);
 }
 
 .dark {
@@ -120,6 +132,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --warning: oklch(0.5797 0.1176 86.02);
+  --warning-foreground: oklch(0.8983 0.1366 91.18);
+  --success-foreground: oklch(0.7262 0.0817 163.17);
+  --success: oklch(0.3864 0.0832 157.54);
+  --danger: oklch(0.4102 0.1344 20.77);
+  --danger-foreground: oklch(0.7299 0.1225 14.8);
 }
 
 @layer base {

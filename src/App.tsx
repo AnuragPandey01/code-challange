@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import ChallangePage from "./pages/ChallangePage";
 import AuthPage from "./pages/AuthPage";
 import Navbar from "./components/Navbar";
 import { Toaster } from "sonner";
 import useThemeStore from "./store/themeStore";
 import Home from "./pages/Home";
+import BrowseChallangePage from "./pages/ChallangesPage";
+import ChallangePage from "./pages/AttemptChallangePage";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<AuthPage />} path="/auth" />
+            <Route element={<BrowseChallangePage />} path="challanges" />
             <Route element={<ChallangePage />} path="challange" />
           </Routes>
         </main>

@@ -4,6 +4,7 @@ import { FeatureCard } from "@/components/FeatureCard";
 import useThemeStore from "@/store/themeStore";
 import { GitBranch, MessageSquare, Sword, Trophy } from "lucide-react";
 import type { COBEOptions, Marker } from "cobe";
+import { Link } from "react-router";
 
 const marker: Marker[] = [{ location: [18.9582, 72.8321], size: 0.1 }];
 
@@ -60,9 +61,11 @@ function Home() {
             <Button variant="default" size="lg">
               Code Sandbox
             </Button>
-            <Button variant="outline" size="lg">
-              Browse Challanges
-            </Button>
+            <Link to="/challanges">
+              <Button variant="outline" size="lg">
+                Browse Challanges
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="md:flex-1">
